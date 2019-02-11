@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="examples.aaronhoskins.com.mvvmanddatabinding.viewmodel.CarViewModel"/>
+
+        <variable
+            name="car"
+            type="examples.aaronhoskins.com.mvvmanddatabinding.model.car.Car"/>
+    </data>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activities.MainActivity">
+
+    <TextView
+        android:id="@+id/tvMake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{car.makeObs}"/>
+
+    <TextView
+        android:id="@+id/tvModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{car.modelObs}"/>
+
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{car.yearObs}"/>
+
+    <TextView
+        android:id="@+id/tvEngine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{car.engineObs}"/>
+
+    <TextView
+        android:id="@+id/tvTransmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{car.transmissionObs}"/>
+
+    <TextView
+        android:id="@+id/tvTitleStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{car.titleStatusObs}"/>
+
+    <Button
+        android:id="@+id/btnPopulate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Populate Fields"
+        android:onClick="@{view -> viewModel.handleClick(view)}"/>
+
+</LinearLayout>
+
+</layout>
